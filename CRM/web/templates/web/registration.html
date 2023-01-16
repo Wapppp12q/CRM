@@ -1,0 +1,28 @@
+{% extends 'web/base.html' %}
+
+
+{% block content %}
+<div class="error">{{ error }}</div>
+<div class="card">
+    <div class="card-body">
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            <h4>Регистрация</h4>тп
+                <div class="card-body">
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        <p>{{ form.email_or_number.label }}<br>
+                            {{ form.email_or_number }}
+                        </p>
+                        <p><button type="submit">Отправить</button></p>
+                    </form>
+                    <form  method="post" novalidate>
+                        {% csrf_token %}
+                        <button type="submit" name="entrance">Уже зарегистрированы?</button>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

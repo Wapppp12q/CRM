@@ -1,0 +1,33 @@
+{% extends 'web/base.html' %}
+
+
+{% block content %}
+<div class="error">{{error}}</div>
+<div class="card">
+    <div class="card-body">
+        <form action="" method="post" novalidate>
+            <h2>Введите данные</h2>
+            <div class="cardd">
+                <div class="card-body">
+                    <form action="" method="post" novalidate>
+                        {% csrf_token %}
+                       <p>{{ form.name.label }}<br>
+                           {{ form.name }}</p>
+                       <p>{{ form.surname.label }}<br>
+                           {{ form.surname }}</p>
+                        <p></p>
+                        <label>Придумайет пароль латинскими буквами<br>
+                               Разных регистров,<br>
+                               Включающий в себя как-нибудь из данных символов<br>
+                               '1234567890!"№;%:?*()_+-=#$^&?/,.\/\|'
+                        </label>
+                        <p><input name="password1" type="password" /></p>
+                        <p><input name="password2" type="password" /></p>
+                        <button type="submit">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'web/base.html' %}
+
+
+{% block content %}
+<div class="error">{{error}}</div>
+<div class="card">
+    <div class="card-body">
+        <h1>{{title}}</h1>
+        <form method=post enctype=multipart/form-data>
+            {% csrf_token %}
+              <p><img src={{src}}></p>
+                <p>
+                  <input type=file name=file>
+              </p>
+              <p>
+                  <button type="submit">Загрузить</button>
+              </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'web/base.html' %}
+
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <form action="" method="post" novalidate>
+            <h3 align="center">
+                Войти в аккаунт
+            </h3>
+            <div class="cardd">
+                <div class="card-boby">
+                    <form action="" method="post" novalidate>
+                        {% csrf_token %}
+                        {{ error }}
+                        <p>{{ form.email_or_number.label }}<br>
+                            {{ form.email_or_number }}
+                        </p>
+                        <p>
+                            <input name="password" type="password" />
+                        </p>
+                        <p>
+                            <button type="submit" name="entrance">Войти</button>
+                        </p>
+                    </form>
+                    <form  method="post" novalidate>
+                        {% csrf_token %}
+                        <button type="submit" name="registration">Регистрация</button>
+                    </form>
+                    <form  method="post" novalidate>
+                        {% csrf_token %}
+                        <button type="submit" name="recovery">Забыли пароль?</button>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

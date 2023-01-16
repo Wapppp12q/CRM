@@ -1,0 +1,23 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<h1>heloooooooooooooooooooooooooo</h1>
+<div class="card">
+    <div class="card-body">
+        <form action="" method="post" novalidate>
+            <h3>Ввостановление аккаунта</h3>
+            <div class="cardd">
+                <div class="card-body">
+                    <form action="" method="post" novalidate>
+                        {% csrf_token %}
+                        {{error}}
+                        <p><input name="password1" type="password" /></p>
+                        <p><input name="password2" type="password" /></p>
+                        <button type="submit">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+       </form>
+    </div>
+</div>
+{% endblock %}

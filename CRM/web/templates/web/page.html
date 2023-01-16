@@ -1,0 +1,14 @@
+{% extends 'web/base.html' %}
+
+
+{% block content %}
+<h2>{{ name }} {{ surname }}</h2>
+<div class="card">
+    <div class="card-body">
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            <img src={{ src }} class="avatar">
+        </form>
+    </div>
+</div>
+{% endblock %}
